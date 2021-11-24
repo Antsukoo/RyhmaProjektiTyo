@@ -51,7 +51,7 @@ namespace RyhmaTyo1
             this.UserTB.Size = new System.Drawing.Size(235, 34);
             this.UserTB.TabIndex = 0;
             this.UserTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.UserTB.Enter += new System.EventHandler(this.UserTB_Entered);
+            this.UserTB.TextChanged += new System.EventHandler(this.UserTB_TextChanged);
             // 
             // PassTB
             // 
@@ -69,7 +69,6 @@ namespace RyhmaTyo1
             this.PassTB.Size = new System.Drawing.Size(235, 34);
             this.PassTB.TabIndex = 1;
             this.PassTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.PassTB.Enter += new System.EventHandler(this.PassTB_Entered);
             // 
             // customButton1
             // 

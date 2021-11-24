@@ -52,15 +52,6 @@ namespace RyhmaTyo1
            
 
         }
-        private void UserTB_Entered(object sender, EventArgs e)
-        {
-            PassTB.Focus();
-            
-        }
 
-        private void PassTB_Entered(object sender, EventArgs e)
-        {
-            SubButton.PerformClick();
-        }
     }
 }

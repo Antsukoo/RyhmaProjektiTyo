@@ -19,6 +19,9 @@ namespace RyhmaTyo1
             InitializeComponent();
         }
 
-
+       private void Form1_Closing(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
