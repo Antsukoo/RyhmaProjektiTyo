@@ -190,6 +190,7 @@ namespace Projekti
             this.poistaAsiakasBtn.TabIndex = 20;
             this.poistaAsiakasBtn.Text = "Poista Asiakas";
             this.poistaAsiakasBtn.UseVisualStyleBackColor = true;
+            this.poistaAsiakasBtn.Click += new System.EventHandler(this.poistaAsiakasBtn_Click);
             // 
             // paivitaAsiakasBtn
             // 
@@ -336,10 +337,11 @@ namespace Projekti
             this.hallitseHuoneitaPanel.Controls.Add(this.label8);
             this.hallitseHuoneitaPanel.Controls.Add(this.label9);
             this.hallitseHuoneitaPanel.Controls.Add(this.label10);
+            this.hallitseHuoneitaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hallitseHuoneitaPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.hallitseHuoneitaPanel.Location = new System.Drawing.Point(378, 12);
+            this.hallitseHuoneitaPanel.Location = new System.Drawing.Point(0, 25);
             this.hallitseHuoneitaPanel.Name = "hallitseHuoneitaPanel";
-            this.hallitseHuoneitaPanel.Size = new System.Drawing.Size(800, 425);
+            this.hallitseHuoneitaPanel.Size = new System.Drawing.Size(804, 425);
             this.hallitseHuoneitaPanel.TabIndex = 2;
             this.hallitseHuoneitaPanel.TabStop = true;
             this.hallitseHuoneitaPanel.Visible = false;
@@ -419,6 +421,7 @@ namespace Projekti
             this.poistaHuoneBtn.TabIndex = 20;
             this.poistaHuoneBtn.Text = "Poista Huone";
             this.poistaHuoneBtn.UseVisualStyleBackColor = true;
+            this.poistaHuoneBtn.Click += new System.EventHandler(this.poistaHuoneBtn_Click);
             // 
             // paivitaHuoneBtn
             // 
@@ -532,10 +535,11 @@ namespace Projekti
             this.hallitseVarauksiaPanel.Controls.Add(this.label11);
             this.hallitseVarauksiaPanel.Controls.Add(this.label12);
             this.hallitseVarauksiaPanel.Controls.Add(this.label13);
+            this.hallitseVarauksiaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hallitseVarauksiaPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.hallitseVarauksiaPanel.Location = new System.Drawing.Point(669, 0);
+            this.hallitseVarauksiaPanel.Location = new System.Drawing.Point(0, 25);
             this.hallitseVarauksiaPanel.Name = "hallitseVarauksiaPanel";
-            this.hallitseVarauksiaPanel.Size = new System.Drawing.Size(800, 425);
+            this.hallitseVarauksiaPanel.Size = new System.Drawing.Size(804, 425);
             this.hallitseVarauksiaPanel.TabIndex = 24;
             this.hallitseVarauksiaPanel.TabStop = true;
             this.hallitseVarauksiaPanel.Visible = false;
@@ -638,6 +642,7 @@ namespace Projekti
             this.poistaVarausBtn.TabIndex = 20;
             this.poistaVarausBtn.Text = "Poista Varaus";
             this.poistaVarausBtn.UseVisualStyleBackColor = true;
+            this.poistaVarausBtn.Click += new System.EventHandler(this.poistaVarausBtn_Click);
             // 
             // paivitaVarausBtn
             // 

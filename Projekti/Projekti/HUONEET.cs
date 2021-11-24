@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Projekti
 {
@@ -14,14 +15,23 @@ namespace Projekti
 
         public DataTable haeHuoneet()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet", yhteys.otaYhteys());
-            MySqlDataAdapter adapteri = new MySqlDataAdapter();
-            DataTable taulu = new DataTable();
+            try
+            {
+                MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet", yhteys.otaYhteys());
+                MySqlDataAdapter adapteri = new MySqlDataAdapter();
+                DataTable taulu = new DataTable();
 
-            adapteri.SelectCommand = komento;
-            adapteri.Fill(taulu);
+                adapteri.SelectCommand = komento;
+                adapteri.Fill(taulu);
 
-            return taulu;
+                return taulu;
+            }
+            catch
+            {
+                MessageBox.Show("VIRHE - Huoneita ei pystytty hakemaan!", "Huoneiden haku", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            
         }
 
         public bool lisaaHuone(int huoneNumero, string huoneTyyppi, string puhelin, bool vapaa)

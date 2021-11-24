@@ -40,14 +40,8 @@ namespace Projekti
 
             hallitseHuoneitaPanel.Visible = false;
             hallitseAsiakkaitaPanel.Visible = true;
-            Asiakkaidenkasittelyform asikasFor = new Asiakkaidenkasittelyform();
-            formOnAuki = asikasFor.onAuki;
-            Form asiakasForm = new Asiakkaidenkasittelyform();
-
-            if (!formOnAuki)
-            {
-                asiakasForm.Show();
-            }
+            
+            
             
 
         }
@@ -58,13 +52,7 @@ namespace Projekti
             hallitseAsiakkaitaPanel.Visible = false;
             hallitseVarauksiaPanel.Visible = false;
             hallitseHuoneitaPanel.Visible = true;
-            Form asiakasForm = new Asiakkaidenkasittelyform();
-
-            if (formOnAuki)
-            {
-                formOnAuki = false;
-            }
-            asiakasForm.Close();
+           
 
         }
 
@@ -73,12 +61,7 @@ namespace Projekti
             hallitseHuoneitaPanel.Visible = false;
             hallitseVarauksiaPanel.Visible = true;
             hallitseAsiakkaitaPanel.Visible = false;
-            Form asiakasForm = new Asiakkaidenkasittelyform();
-            if (formOnAuki)
-            {
-                formOnAuki = false;
-            }
-            asiakasForm.Close();
+           
         }
 
         private void tyhjennaVarausBtn_Click(object sender, EventArgs e)
@@ -359,6 +342,50 @@ MessageBox.Show("VIRHE - Näillä tiedoilla löytyy jo asiakas!", "Asiakkaan lis
             //maa
         }
 
+        private void poistaAsiakasBtn_Click(object sender, EventArgs e)
+        {
+            int asiakasID = Convert.ToInt32(asiakasIDTB.Text);
+            if (asiakkaat.poistaAsiakas(asiakasID))
+            {
+                asiakkaatDataBox.DataSource = asiakkaat.haeAsiakkaat();
+                MessageBox.Show("Asiakas poistettiin onnistuneesti!", "Asiakkaan poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Asiakasta ei pystytty poistamaan!", "Asiakkaan poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            tyhjennaAsiakasBtn.PerformClick();
+        }
+
+        private void poistaHuoneBtn_Click(object sender, EventArgs e)
+        {
+            int huoneID = Convert.ToInt32(huoneIDTB.Text);
+            if (asiakkaat.poistaAsiakas(huoneID))
+            {
+                huoneetDataBox.DataSource = huoneet.haeHuoneet();
+                MessageBox.Show("Huone poistettiin onnistuneesti!", "Huoneen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huonetta ei pystytty poistamaan!", "Huoneen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            tyhjennaHuoneBtn.PerformClick();
+        }
+
+        private void poistaVarausBtn_Click(object sender, EventArgs e)
+        {
+            int varausID = Convert.ToInt32(varausIDTB.Text);
+            if (asiakkaat.poistaAsiakas(varausID))
+            {
+                varauksetDataBox1.DataSource = varaukset.haeVaraukset();
+                MessageBox.Show("Varaus poistettiin onnistuneesti!", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Varausta ei pystytty poistamaan!", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            tyhjennaVarausBtn.PerformClick();
+        }
     }
 }
 
