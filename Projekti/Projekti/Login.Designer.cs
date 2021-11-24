@@ -29,50 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.usernameTB = new System.Windows.Forms.TextBox();
-            this.passwordTB = new System.Windows.Forms.TextBox();
-            this.kirjauduBtn = new System.Windows.Forms.Button();
+            this.usernameTB = new ZBobb.AlphaBlendTextBox();
+            this.passwordTB = new ZBobb.AlphaBlendTextBox();
+            this.KirjauduBtn = new Projekti.CustomButton();
             this.SuspendLayout();
             // 
             // usernameTB
             // 
-            this.usernameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTB.Location = new System.Drawing.Point(131, 251);
+            this.usernameTB.BackAlpha = 30;
+            this.usernameTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.usernameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.usernameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTB.ForeColor = System.Drawing.Color.Black;
+            this.usernameTB.Location = new System.Drawing.Point(169, 316);
+            this.usernameTB.MaxLength = 30;
             this.usernameTB.Name = "usernameTB";
-            this.usernameTB.Size = new System.Drawing.Size(176, 29);
-            this.usernameTB.TabIndex = 0;
+            this.usernameTB.Size = new System.Drawing.Size(264, 34);
+            this.usernameTB.TabIndex = 4;
+            this.usernameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passwordTB
             // 
-            this.passwordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTB.Location = new System.Drawing.Point(131, 296);
+            this.passwordTB.BackAlpha = 30;
+            this.passwordTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.passwordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTB.ForeColor = System.Drawing.Color.Black;
+            this.passwordTB.Location = new System.Drawing.Point(169, 366);
+            this.passwordTB.MaxLength = 30;
             this.passwordTB.Name = "passwordTB";
-            this.passwordTB.Size = new System.Drawing.Size(176, 29);
-            this.passwordTB.TabIndex = 1;
+            this.passwordTB.PasswordChar = '●';
+            this.passwordTB.Size = new System.Drawing.Size(264, 34);
+            this.passwordTB.TabIndex = 5;
+            this.passwordTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // kirjauduBtn
+            // KirjauduBtn
             // 
-            this.kirjauduBtn.BackColor = System.Drawing.Color.White;
-            this.kirjauduBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kirjauduBtn.Location = new System.Drawing.Point(160, 352);
-            this.kirjauduBtn.Name = "kirjauduBtn";
-            this.kirjauduBtn.Size = new System.Drawing.Size(115, 36);
-            this.kirjauduBtn.TabIndex = 2;
-            this.kirjauduBtn.Text = "Kirjaudu";
-            this.kirjauduBtn.UseVisualStyleBackColor = false;
-            this.kirjauduBtn.Click += new System.EventHandler(this.kirjauduBtn_Click);
+            this.KirjauduBtn.BackColor = System.Drawing.Color.Transparent;
+            this.KirjauduBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.KirjauduBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Olive;
+            this.KirjauduBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.KirjauduBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KirjauduBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KirjauduBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.KirjauduBtn.Location = new System.Drawing.Point(219, 446);
+            this.KirjauduBtn.Name = "KirjauduBtn";
+            this.KirjauduBtn.Size = new System.Drawing.Size(173, 54);
+            this.KirjauduBtn.TabIndex = 3;
+            this.KirjauduBtn.Text = "Kirjaudu";
+            this.KirjauduBtn.UseVisualStyleBackColor = false;
+            this.KirjauduBtn.Click += new System.EventHandler(this.kirjauduBtn_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(473, 575);
-            this.Controls.Add(this.kirjauduBtn);
+            this.ClientSize = new System.Drawing.Size(631, 708);
             this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.usernameTB);
+            this.Controls.Add(this.KirjauduBtn);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -81,9 +103,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox usernameTB;
-        private System.Windows.Forms.TextBox passwordTB;
-        private System.Windows.Forms.Button kirjauduBtn;
+        private CustomButton KirjauduBtn;
+        private ZBobb.AlphaBlendTextBox usernameTB;
+        private ZBobb.AlphaBlendTextBox passwordTB;
     }
 }
