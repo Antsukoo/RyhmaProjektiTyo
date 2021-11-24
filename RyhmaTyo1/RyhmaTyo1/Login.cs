@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 
 namespace RyhmaTyo1
@@ -15,6 +16,8 @@ namespace RyhmaTyo1
     public partial class Login : Form
     {
         private MySqlConnection connect = new MySqlConnection("datasource=localhost; port=3306;username=root;password=;database=hoteli");
+        MySqlDataAdapter adapter = new MySqlDataAdapter();
+        DataTable data = new DataTable();
         public Login()
         {
             InitializeComponent();
@@ -22,10 +25,10 @@ namespace RyhmaTyo1
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string user = UserTB.Text;
-            string pass = PassTB.Text;
-            DataTable data = new DataTable();
+            
+            string user = UserTB.Text.Trim();
+            string pass = PassTB.Text.Trim();
+
 
             try
             {
@@ -49,7 +52,15 @@ namespace RyhmaTyo1
            
 
         }
+        private void UserTB_Entered(object sender, EventArgs e)
+        {
+            PassTB.Focus();
+            
+        }
 
-      
+        private void PassTB_Entered(object sender, EventArgs e)
+        {
+            SubButton.PerformClick();
+        }
     }
 }

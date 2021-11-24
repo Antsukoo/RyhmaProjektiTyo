@@ -14,9 +14,12 @@ namespace RyhmaTyo1
         [STAThread]
         static void Main()
         {
+            Console.WriteLine("What the heck");
+            Console.ReadLine();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            
         }
     }
 }
